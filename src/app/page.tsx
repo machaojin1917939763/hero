@@ -1,102 +1,65 @@
-import Image from "next/image";
+import Image from 'next/image';
+import ThreeHero from '@/components/ThreeHero';
+import ProfileInfo from '@/components/ProfileInfo';
+import SkillTree from '@/components/SkillTree';
+import ProjectCards from '@/components/ProjectCards';
+import ResumeButton from '@/components/ResumeButton';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      {/* 3D Hero Section */}
+      <ThreeHero />
+      
+      {/* Profile Info Section */}
+      <section className="container mx-auto px-4 py-12">
+        <ProfileInfo 
+          name="马超金"
+          title="软件研发工程师 / Java开发工程师"
+          description="黑龙江科技大学软件工程本科毕业，曾获三等奖学金、蓝桥杯省一等奖等多项荣誉。目前就职于小米科技有限责任公司系统架构部，负责EMM平台迭代升级与代码重构，以及系统升级驱动模块开发。擅长Java开发，熟悉Spring全家桶，对Redis、MySQL等技术有深入理解。"
+          socialLinks={{
+            github: 'https://github.com/yourusername',
+            linkedin: 'https://linkedin.com/in/yourusername',
+            email: 'mailto:1917939763@qq.com',
+            website: 'https://yourwebsite.com'
+          }}
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <ResumeButton resumeUrl="/马超金简历.pdf" />
+      </section>
+      
+      {/* Skills Section */}
+      <section className="py-12 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <SkillTree />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+      
+      {/* Projects Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <ProjectCards />
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>© {new Date().getFullYear()} 马超金 - 个人作品集</p>
+          <div className="flex justify-center gap-4 mt-4">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+              微信: 17384273601
+            </a>
+            <a href="mailto:1917939763@qq.com" className="hover:text-blue-400 transition-colors">
+              Email: 1917939763@qq.com
+            </a>
+            <a href="tel:17384273601" className="hover:text-blue-400 transition-colors">
+              电话: 17384273601
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );

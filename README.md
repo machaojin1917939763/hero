@@ -1,37 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 3D个人主页
 
-## Getting Started
+一个使用Three.js、React和Next.js构建的炫酷3D个人作品集网站。
 
-First, run the development server:
+## 功能特点
+
+- 炫酷的3D粒子效果背景
+- 响应式设计，适配桌面和移动设备
+- 个人信息展示
+- 技能树可视化
+- 项目作品展示
+- 简历下载功能
+
+## 技术栈
+
+- **前端框架**: Next.js (React)
+- **3D渲染**: Three.js, React Three Fiber, Drei
+- **样式**: Tailwind CSS
+- **动画**: Framer Motion
+
+## 本地开发
+
+1. 克隆仓库
+
+```bash
+git clone https://github.com/yourusername/3d-portfolio.git
+cd 3d-portfolio
+```
+
+2. 安装依赖
+
+```bash
+npm install
+```
+
+3. 启动开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建和部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 构建项目
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 本地预览构建结果
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 部署到Vercel
 
-## Deploy on Vercel
+这个项目可以轻松部署到Vercel平台：
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. 在GitHub上创建一个仓库并推送代码
+2. 在Vercel上创建一个新项目
+3. 导入GitHub仓库
+4. 点击部署
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# hero
+## 自定义
+
+### 个人信息
+
+编辑 `src/app/page.tsx` 文件中的个人信息部分。
+
+### 技能
+
+在 `src/components/SkillTree.tsx` 文件中修改技能数据。
+
+### 项目
+
+在 `src/components/ProjectCards.tsx` 文件中更新项目数据。
+
+### 简历
+
+将你的简历PDF文件放在 `public` 目录下，并在 `src/app/page.tsx` 中更新简历链接。
+
+## 许可
+
+MIT
